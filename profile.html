@@ -1,0 +1,137 @@
+{% load static %}
+{% static "images" as baseUrl %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+<style type="text/css">
+  .tc{
+   font-size: 19px;
+   font-family: Times New Roman;
+  }
+  .mbc{
+    background-color: white;
+  }
+ .img{
+    border-radius: 60%;
+     text-align: center;
+  }
+</style>
+<body>
+
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header" style="margin-left:10px; margin-bottom:10px; margin-top:5px;">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+     <ul class="nav navbar-nav"><li class="active"><a class="navbar-brand glyphicon glyphicon-user" href="#" style="margin-right:10px;"> PROFILE</a></li></ul>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar" style="margin-bottom:2px; margin-top:5px;">
+      <ul class="nav navbar-nav">
+        <li class="active" ><a href="#">Home</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right tc">
+        <li class="active"><button class="btn btn-dark btn btn-space btn-lg" data-toggle="modal" data-target="#leaveapp"style="margin-right:20px;"><span class="glyphicon glyphicon-pencil"></span> Apply leave</button></li><span> </span>
+        <li class="active"><button class="  btn btn btn-space btn-dark btn-lg" style="margin-right:20px;"><span class="glyphicon glyphicon-time"></span> history</button></li>
+        <li class="active"><button class="btn btn-dark btn btn-space btn-lg" style="margin-right:10px;"><span class="glyphicon glyphicon-new-window"></span> Check status</button></li><span> </span>
+      </ul>
+    </div>
+  </div>
+</nav>
+<div id="leaveapp" class=" modal fade" role="dialog">
+  <div class="modal-dialog modal-lg">
+
+    
+    <div class="mbc modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h2 class="modal-title img" style = "color:black" >APPLICATION</h2>
+      </div>
+      <div class="modal-body">
+        <div class="container">
+  <form action ="profile.html" >
+    <div class="form-group col-sm-9">
+      <div class="radio">
+  <label><input type="radio" name="optradio" checked><span></span> CL</label>
+</div>
+<div class="radio">
+  <label><input type="radio" name="optradio"><span>  </span> PL</label>
+</div>
+
+      <label for="exampleFormControlTextarea1">Letter:</label>
+      <textarea class="form-control rounded-0" id="exampleFormControlTextarea1" rows="10">write here....ch</textarea>
+    </div>
+    <div class="col-sm-9">
+      <button class="btn btn-lg btn-dark"  id="appleave">send</button>
+    </div>
+
+  </form>
+</div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="jumbotron jumbotron-fluid" style="margin-top: 30px;">
+  <div class="container tc">
+    <!--<div class="row">-->
+            <div>
+          <form>
+  <div class="form-row">
+    <div class="col-md-6" >
+       <div class="card" style="background-color: black;">
+         <div class="card-header"><img class="card-img-top" src="{% static 'images/emp2.png'%}" alt="Card image" style="width:100%"></div>
+           <div class="card-body"><br>
+            <form>
+               <div class="form-group">
+                  <label   class="glyphicon glyphicon-user text-muted"><b> Name:</b></label>
+                  <input type="text" class="form-control" id="pname">
+               </div>
+            </form>
+         </div>
+       </div>
+      </div>
+
+    <div class="form-group col-md-6">
+      <label ><b> Email:</b></label>
+      <input type="email" class="form-control" id="inputEmail4">
+    </div>
+    <div class="form-group col-md-6">
+      <label ><b>Password:</b></label>
+      <input type="password" class="form-control" id="inputPassword4" >
+    </div>
+  </div>
+  <div class="form-group col-md-6">
+    <b>Address:</b>
+    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+  </div>
+  <div class="form-group col-md-6">
+    <b> Bio:</b>
+    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+  </div>
+    <div class="form-group col-md-6">
+      <b>Designation:</b>
+      <input type="text" class="form-control" id="inputAddress" >
+    </div>
+     </form>
+      </div>
+    <!--</div>-->
+    </div>
+</div>
+
+  
+
+</body>
+</html>
